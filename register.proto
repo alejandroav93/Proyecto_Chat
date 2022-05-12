@@ -1,0 +1,28 @@
+syntax = "proto2";
+// Solicitud de cliente
+// option (1) = Registro de usuario
+// option (2) = Listado de usuarios conectados
+// option (3) = Información de usuario
+// option (4) = Cambio de estado
+// option (5) = mensaje
+message Register {
+  optional string sender = 1;
+  // Agregas tu ip para saber que siempre estas mandando los mensajes de un
+  // mismo origen
+  optional string ip = 2;
+  optional string message = 3;
+  enum Option {
+    SEND_MESSAGE = 0;
+    USER_LOGIN = 1;
+    CONNECTED_USERS = 2;
+    USER_INFORMATION = 3;
+    STATUS_CHANGE = 4;
+    DIRECT_MESSAGE = 5;
+  }
+  optional Option flag = 4;
+  optional string extra = 5;
+  // Representación de un HTTP REQUEST
+  // 200 -> ok
+  // 500 -> server error
+  optional int32 code = 6;
+}
