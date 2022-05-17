@@ -178,7 +178,7 @@ void routeMessage(char *encodedMessagePtr, Client *senderPtr) {
                 Client *wantedClientDataPtr = clientRegistry[recieverUname];
                 Client wantedClientData = *wantedClientDataPtr;
                 if (wantedClientData.isReady()) {
-                    outputMessage = sender.nombre() + "<prv>: " + inmessageRegister.message();
+                    outputMessage = sender.nombre() + "[Direct]: " + inmessageRegister.message();
                     destinationClient = wantedClientDataPtr;
                 }
             }

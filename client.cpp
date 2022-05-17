@@ -13,7 +13,7 @@ Importacion de bibliotecas necesarias
 #include <atomic>
 #include <ifaddrs.h>
 #include "register.pb.h" //Importacion del archivo de protocolo compilado por protobuf
-#define DEFAULT_CLIENT_NAME "grupo3"
+#define DEFAULT_CLIENT_NAME "GRUPO_3"
 #define BUFFER_SIZE  2048 
 #define MAX_USERNAME_LENGTH  30 //
 #define DEFAULT_SERVER_PORT 3000
@@ -38,6 +38,7 @@ pthread_t getMessageThread; //pThread for message receiver
   Menu options print  (1-7)
 */
 void printMenu() {
+    cout << "*****************************" << endl;
     cout << "1) Mostrar Menu" << endl;
     cout << "2) Difundir mensaje publico" << endl;
     cout << "3) Enviar mensaje privado/directo" << endl;
@@ -45,6 +46,8 @@ void printMenu() {
     cout << "5) Visualizar lista de usuarios" << endl;
     cout << "6) Visualizar info. de usuario" << endl;
     cout << "7) Finalizar" << endl;
+    cout << "*****************************" << endl;
+
     cout << endl << "Ingrese opcion deseada (1-7): ";
 }
 
